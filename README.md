@@ -38,6 +38,10 @@ _Disclaimer: Any mention of features "not working" may reflect my own limitation
 
 _Nitro Note: Nitro's `cloudflare-durable` preset enables Durable Objects via an internal module, creating a single global instance primarily for WebSocket support through a wrapper API. I'm not sure how this is achieved and could be a path to explore unlocking full functionality on nitro based setups, not sure if it supports rpc methods though._
 
+## Resources
+
+- [One Database Per User with Cloudflare Durable Objects and Drizzle ORM](https://boristane.com/blog/durable-objects-database-per-user/)
+
 ## TODO:
 - [ ] complete minimal setup of all apps
 - [ ] explore nitro's cloudflare-durable preset
