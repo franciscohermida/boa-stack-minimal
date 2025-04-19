@@ -1,0 +1,32 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "boa-stack-app-nitro",
+  "main": "./.output/server/index.mjs",
+  "compatibility_date": "2025-04-19",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+  },
+  // #region: Doesn't work in the current setup
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "DO",
+        "class_name": "DurableNitro",
+        "script_name": "worker-do"
+      },
+    ],
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": ["DurableNitro"],
+    },
+  ],
+  // #endregion
+  "services": [{ "binding": "APP_WORKER", "service": "boa-stack-app-worker" }],
+}

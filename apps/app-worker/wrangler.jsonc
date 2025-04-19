@@ -1,0 +1,31 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "boa-stack-app-worker",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-04-19",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  "dev": {
+    "port": 3100
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "DO",
+        "class_name": "DurableWorker",
+      },
+    ],
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": ["DurableWorker"],
+    },
+  ],
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "boa-stack-app-vue",
+  "main": "./server/index.ts",
+  "compatibility_date": "2025-04-08",
+  "compatibility_flags": ["nodejs_compat"],
+  "dev": {
+    "port": 3201,
+  },
+  // "assets": {
+  //   "directory": "./dist",
+  //   "not_found_handling": "single-page-application"
+  // },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "DO",
+        "class_name": "DurableVue",
+      },
+    ],
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": ["DurableVue"],
+    },
+  ],
+
+  "services": [{ "binding": "APP_WORKER", "service": "boa-stack-app-worker" }]
+}

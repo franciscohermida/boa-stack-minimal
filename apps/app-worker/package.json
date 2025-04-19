@@ -1,0 +1,14 @@
+{
+	"name": "app-worker",
+	"type": "module",
+	"main": "exports/index.ts",
+	"scripts": {
+		"dev": "wrangler dev",
+		"deploy": "wrangler deploy --minify",
+		"cf-typegen": "wrangler types --env-interface CloudflareBindings"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20250419.0",
+		"wrangler": "^4.12.0"
+	}
+}
