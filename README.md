@@ -40,6 +40,8 @@ _Nitro Note: Nitro's `cloudflare-durable` preset enables Durable Objects via an 
 
 ## Resources
 
+- [Nuxt Durable Objects Monorepo Example](https://github.com/timhanlon/nuxt-durable-objects-monorepo)
+- [Tanstack Start on Cloudflare Workers Example](https://github.com/backpine/tanstack-start-on-cloudflare-workers-v0)
 - [One Database Per User with Cloudflare Durable Objects and Drizzle ORM](https://boristane.com/blog/durable-objects-database-per-user/)
 
 ## TODO:
