@@ -6,7 +6,7 @@ This project explores optimal configurations for multi-app projects leveraging C
 
 The `app-worker` could represent, for example, a central authentication service accessible by other applications.
 
-Frameworks like Hono would work in the same category as app-worker, all features .
+Frameworks like Hono would fall into the same category as app-worker, where all features work.
 
 ## Feature Support Matrix
 
