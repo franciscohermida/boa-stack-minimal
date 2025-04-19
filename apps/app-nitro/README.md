@@ -3,4 +3,6 @@ Doesn't support Durable Objects (limitation of getPlatformProxy? https://develop
 
 Workaround to use durable objects: create a separate worker and service bind to it.
 
-TODO: step by step guide to modify from starter project to get it working
+## TODO: 
+- [ ] step by step guide to modify from starter project to get it working
+- [ ] properly type event.context.cloudflare.env 
