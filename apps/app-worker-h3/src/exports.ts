@@ -1,0 +1,1 @@
+export { default as AppWorkerH3 } from "./index";

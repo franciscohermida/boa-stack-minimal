@@ -1,0 +1,27 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "boa-stack-app-worker-h3",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-04-19",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  "dev": {
+    "port": 3101
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "DO",
+        "class_name": "DurableWorkerH3",
+      },
+    ],
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": ["DurableWorkerH3"],
+    },
+  ],
+}

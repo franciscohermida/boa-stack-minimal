@@ -12,7 +12,7 @@ export class DurableNitro extends DurableObject {
   }
 
   async sayHello(str: string) {
-    return `hello ${str} from app-nitro worker-do`;
+    return `hello ${str} from app-nitro DurableNitro`;
   }
 }
 

@@ -10,7 +10,7 @@ export class DurableWorker extends DurableObject {
   }
 
   async sayHello(str: string) {
-    return `hello ${str} from app-worker worker-do`;
+    return `hello ${str} from app-worker DurableWorker`;
   }
 }
 
@@ -26,11 +26,11 @@ export default class extends WorkerEntrypoint {
     return new Response("Hello, World!");
   }
 
-  add(a: number, b: number) {
+  async add(a: number, b: number) {
     return a + b;
   }
 
-  doSayHello(str: string) {
+  async doSayHello(str: string) {
     const id = this.env.DO.idFromName("hello");
     const stub = this.env.DO.get(id);
     return stub.sayHello(str);

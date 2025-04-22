@@ -2,12 +2,13 @@
   "private": true,
   "scripts": {
     "build": "nitro build",
-    "dev": "nitro dev",
+    "dev": "cross-env PORT=3102 nitro dev",
     "prepare": "nitro prepare",
     "preview": "node .output/server/index.mjs"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250419.0",
+    "cross-env": "^7.0.3",
     "nitro-cloudflare-dev": "^0.2.2",
     "nitropack": "latest",
     "wrangler": "^4.12.0"

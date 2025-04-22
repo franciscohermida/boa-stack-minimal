@@ -1,18 +1,21 @@
-export default defineEventHandler((event) => {
-  console.log("env", event.context.cloudflare.env);
+import type { Env } from "../types/envBindings";
+
+export default defineEventHandler(async (event) => {
+  const env = event.context.cloudflare.env as Env;
+  console.log("env", env);
   {
-    const result = event.context.cloudflare.env.APP_WORKER.add(1, 2);
+    const result = await env.APP_WORKER.add(1, 2);
     console.log("APP_WORKER.add", result);
   }
 
   {
-    const result = event.context.cloudflare.env.APP_WORKER.doSayHello("world");
+    const result = await env.APP_WORKER.doSayHello("world");
     console.log("APP_WORKER.doSayHello", result);
   }
 
   // TODO: doesn't work
-  // const resultDo = event.context.cloudflare.env.DO.sayHello("world");
-  // console.log("resultDo", resultDo);
+  // const result = env.DO.sayHello("world");
+  // console.log("result", result);
 
   return "Start by editing <code>server/routes/index.ts</code>.";
 });

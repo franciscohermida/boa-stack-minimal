@@ -12,7 +12,7 @@ export class DurableVue extends DurableObject {
   }
 
   async sayHello(str: string) {
-    return `hello ${str} from app-vue worker-do`;
+    return `hello ${str} from app-vue DurableVue`;
   }
 }
 

@@ -1,0 +1,18 @@
+{
+	"name": "app-worker-h3",
+	"type": "module",
+	"main": "exports/index.ts",
+	"scripts": {
+		"dev": "wrangler dev",
+		"deploy": "wrangler deploy --minify",
+		"cf-typegen": "wrangler types --env-interface CloudflareBindings"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20250419.0",
+		"wrangler": "^4.12.0"
+	},
+	"dependencies": {
+		"h3": "^1.15.1",
+		"h3-nightly": "2.0.0-20250417-222045-ac609aa"
+	}
+}
